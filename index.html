@@ -82,7 +82,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,7,5,.72);border-bottom:1px solid var(--border)}
 .nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;max-width:1180px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{height:44px;width:auto}
+.brand img{height:68px;width:auto}
+@media (max-width:640px){.brand img{height:52px}}
 .brand span{font-family:'Anton';font-size:1.05rem;letter-spacing:.03em;color:var(--gold-2)}
 nav.links{display:flex;gap:28px;align-items:center}
 nav.links a{text-decoration:none;color:var(--text-secondary);font-weight:600;font-size:.92rem;transition:color .2s var(--ease)}
@@ -174,7 +175,7 @@ h1.hero-title em{font-style:normal;color:var(--text-primary);display:block}
 @keyframes cueMove{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(9px);opacity:.35}}
 .is-static .scroll-cue{display:none}
 @media (max-height:560px){.scroll-cue{display:none}}
-@media (max-width:940px){.band{max-width:100%;text-align:center;align-items:center}.is-static .band-a .kicker{margin-left:auto;margin-right:auto}}
+@media (max-width:940px){.band{max-width:100%;box-sizing:border-box;padding-left:24px;padding-right:24px;text-align:center;align-items:center}.is-static .band-a .kicker{margin-left:auto;margin-right:auto}}
 
 /* MARQUEE */
 .marquee-wrap{position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--panel);padding:16px 0;overflow:hidden}
@@ -372,7 +373,7 @@ footer{border-top:1px solid var(--border);padding:44px 0 100px;background:var(--
 <header class="nav">
   <div class="nav-row">
     <a class="brand" href="#main">
-      <img src="assets/logo.webp" alt="Reis Atualizações">
+      <img src="assets/logo-reis.webp" alt="Reis Atualizações">
     </a>
     <nav class="links" aria-label="Navegação principal">
       <a href="#generos">Gêneros</a>
@@ -990,10 +991,7 @@ footer{border-top:1px solid var(--border);padding:44px 0 100px;background:var(--
 
   /* ---- the five static-hero gates, decided live ---- */
   var GATE_QUERIES = [
-    '(max-width: 720px)',
-    '(orientation: portrait) and (max-width: 1024px)',
-    '(orientation: portrait) and (pointer: coarse)',
-    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+    '(orientation: landscape) and (pointer: coarse) and (max-height: 420px)',
     '(prefers-reduced-motion: reduce)'
   ];
   var MQLS = GATE_QUERIES.map(function(q){ return matchMedia(q); });
